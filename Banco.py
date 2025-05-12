@@ -5,11 +5,18 @@ Created on Sun Jun 25 16:46:56 2017
 
 @author: samara
 """
+# For mac: 
+# brew install mysql
+# brew services start mysql
+# mysql_secure_installation 
+# senha: 1234@Feliz 
+# mysql -u root -p
+# CREATE DATABASE estacionamentoX;
 
 import pymysql
 class Banco:    
     def __init__(self):
-        self.conexao = pymysql.connect(host="localhost", user="root", passwd="1234", db="estacionamentoX")
+        self.conexao = pymysql.connect(host="localhost", user="root", passwd="1234@Feliz", db="estacionamentoX")
     def criarTabelaEstacionamento(self):       
         c = self.conexao.cursor()
         c.execute("""CREATE TABLE if not exists estacionamento(
